@@ -4,7 +4,6 @@ import os
 from flask import Flask, render_template, redirect, url_for
 from forms import ItemForm
 from models import Items
-from database import db_session
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('APP_SECRET_KEY')
@@ -20,14 +19,11 @@ def add_item():
     return render_template('index.html', form=form)
 
 @app.route("/success")
-def success():
+def success(): 
     results = []
- 
     qry = db_session.query(Items)
-    results = qry.all()
-
+    results = [(item.id, item.name, item.quantity, item.description, str(item.date_added)) for item in qry.all()]
     return str(results)
-  
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int("5001"))
