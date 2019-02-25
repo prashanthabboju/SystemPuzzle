@@ -5,7 +5,8 @@
 2. [Introduction](README.md#introduction)
 3. [Puzzle details](README.md#puzzle-details)
 4. [Instructions to submit your solution](README.md#instructions-to-submit-your-solution)
-5. [FAQ](README.md#faq)
+5. [Changes made to the code]
+6. [FAQ](README.md#faq)
 
 # Understanding the puzzle
 
@@ -42,6 +43,11 @@ Once you've corrected the bugs and have the basic features working, commit the f
 * Use the submission box to enter the link to your GitHub repo or Bitbucket ONLY
 * Link to the specific repo for this project, not your general profile
 * Put any comments in the README inside your project repo
+
+## Changes made to the code
+* Initialized port 5001 in the app.py in app.run()
+* Changed the syntax of os.environ["PATHVARIABLE"] to os.environ.get('PATHVARIABLE') as my python version is not compatable to it.
+* Changed the port 8080:80 to 8080:80 in nginx field in DockerCompose.yml
 
 # FAQ
 
